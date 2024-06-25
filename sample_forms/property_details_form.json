@@ -1,0 +1,291 @@
+{
+  "name": "Property Details Form",
+  "description": "This form is used to collect the details of the property and the user",
+  "creator": "Kailash",
+  "version": "1.0",
+  "page_count": 3,
+  "form_timeout": 30,
+  "pages": [
+    {
+      "name": "Property General Details",
+      "fields": [
+        {
+          "id": "property_type",
+          "name": "Property Type",
+          "type": "select",
+          "required": true,
+          "placeholder": null,
+          "options": ["Villa", "Apartment", "Plot", "Farm Land", "Other"],
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "property_price",
+          "name": "Property Price",
+          "type": "number",
+          "required": true,
+          "placeholder": "Enter the price of the property",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": 0,
+            "max": null
+          }
+        },
+        {
+          "id": "property_area",
+          "name": "Property Area",
+          "type": "number",
+          "required": true,
+          "placeholder": "Enter the area of the property",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": 0,
+            "max": null
+          }
+        },
+        {
+          "id": "commission",
+          "name": "Commission",
+          "type": "number",
+          "required": true,
+          "placeholder": "Enter the commission",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": 0,
+            "max": null
+          }
+        },
+        {
+          "id": "next",
+          "name": "Next",
+          "type": "button",
+          "required": true,
+          "placeholder": null,
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": "next_page",
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Property Location",
+      "fields": [
+        {
+          "id": "property_address",
+          "name": "Property Address",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter the address of the property",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "property_city",
+          "name": "Property City",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter the city of the property",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "property_state",
+          "name": "Property State",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter the state of the property",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "property_country",
+          "name": "Property Country",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter the country of the property",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "next",
+          "name": "Next",
+          "type": "button",
+          "required": true,
+          "placeholder": null,
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": "next_page",
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Details",
+      "fields": [
+        {
+          "id": "user_name",
+          "name": "User Name",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter your name",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "user_email",
+          "name": "User Email",
+          "type": "email",
+          "required": true,
+          "placeholder": "Enter your email",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "user_phone",
+          "name": "User Phone",
+          "type": "number",
+          "required": true,
+          "placeholder": "Enter your phone number",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": 0,
+            "max": null
+          }
+        },
+        {
+          "id": "submit",
+          "name": "Submit",
+          "type": "button",
+          "required": true,
+          "placeholder": null,
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": "submit_form",
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    }
+  ]
+}

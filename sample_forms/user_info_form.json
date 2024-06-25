@@ -1,0 +1,153 @@
+{
+  "name": "User Data Form",
+  "description": "A sample form to capture user data",
+  "creator": "Kailash",
+  "version": "1.0",
+  "page_count": 2,
+  "form_timeout": 30,
+  "pages": [
+    {
+      "name": "Page 1",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter your name here",
+          "options": null,
+          "metadata": {
+            "max_length": 50,
+            "min_length": 5,
+            "pattern": "^[a-zA-Z ]+$",
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "gender",
+          "name": "Gender",
+          "type": "select",
+          "required": true,
+          "placeholder": null,
+          "options": ["M", "F", "Non-Binary"],
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "age",
+          "name": "Age",
+          "type": "number",
+          "required": true,
+          "placeholder": "Enter your age here",
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": 13,
+            "max": 200
+          }
+        },
+        {
+          "id": "next",
+          "name": "Next",
+          "type": "button",
+          "required": true,
+          "placeholder": null,
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": "next_page",
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "fields": [
+        {
+          "id": "profession",
+          "name": "Profession",
+          "type": "select",
+          "required": true,
+          "placeholder": null,
+          "options": ["Owner", "Agent", "Buyer", "Seller", "Other"],
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "services",
+          "name": "Services",
+          "type": "text",
+          "required": false,
+          "placeholder": "Enter the services you need",
+          "options": null,
+          "metadata": {
+            "max_length": 100,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "id": "submit",
+          "name": "Submit",
+          "type": "button",
+          "required": true,
+          "placeholder": null,
+          "options": null,
+          "metadata": {
+            "max_length": null,
+            "min_length": null,
+            "pattern": null,
+            "styles": {
+              "width": "50%"
+            },
+            "action": "submit_form",
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    }
+  ]
+}
