@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "d8ddce1a-e3ef-4feb-9554-60a69ab3f620",
+		"name": "Dynamic Form Renderer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1315554"
+	},
+	"item": [
+		{
+			"name": "Get Forms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/forms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"forms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Submissions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/submissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Toggle Form",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/submissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Form Config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/form/911db003-088e-4a12-b013-667cccc7cc4c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"form",
+						"911db003-088e-4a12-b013-667cccc7cc4c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Form",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"User Data Form\",\n  \"description\": \"A sample form to capture user data\",\n  \"creator\": \"Anonemous2\",\n  \"version\": \"1.0\",\n  \"page_count\": 2,\n  \"form_timeout\": 30,\n  \"pages\": [\n    {\n      \"name\": \"Page 1\",\n      \"fields\": [\n        {\n          \"id\": \"name\",\n          \"name\": \"Name\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter your name here\",\n          \"metadata\": {\n            \"max_length\": 50,\n            \"min_length\": 5,\n            \"pattern\": \"^[a-zA-Z ]+$\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"gender\",\n          \"name\": \"Gender\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"M\", \"F\", \"Non-Binary\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"age\",\n          \"name\": \"Age\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter your age here\",\n          \"metadata\": {\n            \"min\": 13,\n            \"max\": 200,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"next\",\n          \"name\": \"Next\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"next_page\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"Page 2\",\n      \"fields\": [\n        {\n          \"id\": \"profession\",\n          \"name\": \"Profession\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"Owner\", \"Agent\", \"Buyer\", \"Seller\", \"Other\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"services\",\n          \"name\": \"Services\",\n          \"type\": \"text\",\n          \"required\": false,\n          \"placeholder\": \"Enter the services you need\",\n          \"metadata\": {\n            \"max_length\": 100,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"submit\",\n          \"name\": \"Submit\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"submit_form\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/form",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Submission",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"User Data Form\",\n  \"description\": \"A sample form to capture user data\",\n  \"creator\": \"Anonemous2\",\n  \"version\": \"1.0\",\n  \"page_count\": 2,\n  \"form_timeout\": 30,\n  \"pages\": [\n    {\n      \"name\": \"Page 1\",\n      \"fields\": [\n        {\n          \"id\": \"name\",\n          \"name\": \"Name\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter your name here\",\n          \"metadata\": {\n            \"max_length\": 50,\n            \"min_length\": 5,\n            \"pattern\": \"^[a-zA-Z ]+$\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"gender\",\n          \"name\": \"Gender\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"M\", \"F\", \"Non-Binary\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"age\",\n          \"name\": \"Age\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter your age here\",\n          \"metadata\": {\n            \"min\": 13,\n            \"max\": 200,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"next\",\n          \"name\": \"Next\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"next_page\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"Page 2\",\n      \"fields\": [\n        {\n          \"id\": \"profession\",\n          \"name\": \"Profession\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"Owner\", \"Agent\", \"Buyer\", \"Seller\", \"Other\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"services\",\n          \"name\": \"Services\",\n          \"type\": \"text\",\n          \"required\": false,\n          \"placeholder\": \"Enter the services you need\",\n          \"metadata\": {\n            \"max_length\": 100,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"submit\",\n          \"name\": \"Submit\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"submit_form\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/form",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"form"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
