@@ -113,7 +113,7 @@
           "id": "services",
           "name": "Services",
           "type": "text",
-          "required": false,
+          "required": true,
           "placeholder": "Enter the services you need",
           "options": null,
           "metadata": {
