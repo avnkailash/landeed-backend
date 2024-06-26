@@ -28,11 +28,23 @@
 		},
 		{
 			"name": "Get Submissions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8000/api/submissions",
+					"raw": "http://localhost:8000/api/submissions?form_id=3c505eff-cb24-4a12-a7a2-7a06ff13ba0a",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -41,6 +53,12 @@
 					"path": [
 						"api",
 						"submissions"
+					],
+					"query": [
+						{
+							"key": "form_id",
+							"value": "3c505eff-cb24-4a12-a7a2-7a06ff13ba0a"
+						}
 					]
 				}
 			},
@@ -49,10 +67,19 @@
 		{
 			"name": "Toggle Form",
 			"request": {
-				"method": "GET",
+				"method": "PATCH",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"activate\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8000/api/submissions",
+					"raw": "http://localhost:8000/api/forms/3c505eff-cb24-4a12-a7a2-7a06ff13ba0a/toggle",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -60,7 +87,9 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"submissions"
+						"forms",
+						"3c505eff-cb24-4a12-a7a2-7a06ff13ba0a",
+						"toggle"
 					]
 				}
 			},
@@ -72,7 +101,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/form/911db003-088e-4a12-b013-667cccc7cc4c",
+					"raw": "http://localhost:8000/api/form/3c505eff-cb24-4a12-a7a2-7a06ff13ba0a",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -81,7 +110,7 @@
 					"path": [
 						"api",
 						"form",
-						"911db003-088e-4a12-b013-667cccc7cc4c"
+						"3c505eff-cb24-4a12-a7a2-7a06ff13ba0a"
 					]
 				}
 			},
@@ -99,7 +128,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"User Data Form\",\n  \"description\": \"A sample form to capture user data\",\n  \"creator\": \"Anonemous2\",\n  \"version\": \"1.0\",\n  \"page_count\": 2,\n  \"form_timeout\": 30,\n  \"pages\": [\n    {\n      \"name\": \"Page 1\",\n      \"fields\": [\n        {\n          \"id\": \"name\",\n          \"name\": \"Name\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter your name here\",\n          \"metadata\": {\n            \"max_length\": 50,\n            \"min_length\": 5,\n            \"pattern\": \"^[a-zA-Z ]+$\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"gender\",\n          \"name\": \"Gender\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"M\", \"F\", \"Non-Binary\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"age\",\n          \"name\": \"Age\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter your age here\",\n          \"metadata\": {\n            \"min\": 13,\n            \"max\": 200,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"next\",\n          \"name\": \"Next\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"next_page\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"Page 2\",\n      \"fields\": [\n        {\n          \"id\": \"profession\",\n          \"name\": \"Profession\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"Owner\", \"Agent\", \"Buyer\", \"Seller\", \"Other\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"services\",\n          \"name\": \"Services\",\n          \"type\": \"text\",\n          \"required\": false,\n          \"placeholder\": \"Enter the services you need\",\n          \"metadata\": {\n            \"max_length\": 100,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"submit\",\n          \"name\": \"Submit\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"submit_form\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+					"raw": "{\n  \"name\": \"Property Details Form\",\n  \"description\": \"This form is used to collect the details of the property and the user\",\n  \"creator\": \"Kailash\",\n  \"version\": \"1.0\",\n  \"page_count\": 3,\n  \"form_timeout\": 30,\n  \"pages\": [\n    {\n      \"name\": \"Property General Details\",\n      \"fields\": [\n        {\n          \"id\": \"property_type\",\n          \"name\": \"Property Type\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"placeholder\": null,\n          \"options\": [\"Villa\", \"Apartment\", \"Plot\", \"Farm Land\", \"Other\"],\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"property_price\",\n          \"name\": \"Property Price\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter the price of the property\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": 0,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"property_area\",\n          \"name\": \"Property Area\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter the area of the property\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": 0,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"commission\",\n          \"name\": \"Commission\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter the commission\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": 0,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"next\",\n          \"name\": \"Next\",\n          \"type\": \"button\",\n          \"required\": true,\n          \"placeholder\": null,\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": \"next_page\",\n            \"min\": null,\n            \"max\": null\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"Property Location\",\n      \"fields\": [\n        {\n          \"id\": \"property_address\",\n          \"name\": \"Property Address\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter the address of the property\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"property_city\",\n          \"name\": \"Property City\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter the city of the property\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"property_state\",\n          \"name\": \"Property State\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter the state of the property\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"property_country\",\n          \"name\": \"Property Country\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter the country of the property\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"next\",\n          \"name\": \"Next\",\n          \"type\": \"button\",\n          \"required\": true,\n          \"placeholder\": null,\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": \"next_page\",\n            \"min\": null,\n            \"max\": null\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"User Details\",\n      \"fields\": [\n        {\n          \"id\": \"user_name\",\n          \"name\": \"User Name\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter your name\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"user_email\",\n          \"name\": \"User Email\",\n          \"type\": \"email\",\n          \"required\": true,\n          \"placeholder\": \"Enter your email\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": null,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"user_phone\",\n          \"name\": \"User Phone\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter your phone number\",\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": null,\n            \"min\": 0,\n            \"max\": null\n          }\n        },\n        {\n          \"id\": \"submit\",\n          \"name\": \"Submit\",\n          \"type\": \"button\",\n          \"required\": true,\n          \"placeholder\": null,\n          \"options\": null,\n          \"metadata\": {\n            \"max_length\": null,\n            \"min_length\": null,\n            \"pattern\": null,\n            \"styles\": {\n              \"width\": \"50%\"\n            },\n            \"action\": \"submit_form\",\n            \"min\": null,\n            \"max\": null\n          }\n        }\n      ]\n    }\n  ]\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -133,7 +162,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"User Data Form\",\n  \"description\": \"A sample form to capture user data\",\n  \"creator\": \"Anonemous2\",\n  \"version\": \"1.0\",\n  \"page_count\": 2,\n  \"form_timeout\": 30,\n  \"pages\": [\n    {\n      \"name\": \"Page 1\",\n      \"fields\": [\n        {\n          \"id\": \"name\",\n          \"name\": \"Name\",\n          \"type\": \"text\",\n          \"required\": true,\n          \"placeholder\": \"Enter your name here\",\n          \"metadata\": {\n            \"max_length\": 50,\n            \"min_length\": 5,\n            \"pattern\": \"^[a-zA-Z ]+$\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"gender\",\n          \"name\": \"Gender\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"M\", \"F\", \"Non-Binary\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"age\",\n          \"name\": \"Age\",\n          \"type\": \"number\",\n          \"required\": true,\n          \"placeholder\": \"Enter your age here\",\n          \"metadata\": {\n            \"min\": 13,\n            \"max\": 200,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"next\",\n          \"name\": \"Next\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"next_page\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"name\": \"Page 2\",\n      \"fields\": [\n        {\n          \"id\": \"profession\",\n          \"name\": \"Profession\",\n          \"type\": \"select\",\n          \"required\": true,\n          \"options\": [\"Owner\", \"Agent\", \"Buyer\", \"Seller\", \"Other\"],\n          \"metadata\": {\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"services\",\n          \"name\": \"Services\",\n          \"type\": \"text\",\n          \"required\": false,\n          \"placeholder\": \"Enter the services you need\",\n          \"metadata\": {\n            \"max_length\": 100,\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        },\n        {\n          \"id\": \"submit\",\n          \"name\": \"Submit\",\n          \"type\": \"buttom\",\n          \"required\": true,\n          \"metadata\": {\n            \"action\": \"submit_form\",\n            \"styles\": {\n              \"width\": \"50%\"\n            }\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+					"raw": "{\n    \"form_id\": \"c0ed5ef2-f5d1-4cca-ac32-07a625c0e5af\",\n    \"data\": {\n        \"name\": \"Test\",\n        \"gender\": \"M\",\n        \"age\": \"35\",\n        \"profession\": \"Owner\",\n        \"services\": \"test\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -141,7 +170,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/form",
+					"raw": "http://localhost:8000/api/submit",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -149,7 +178,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"form"
+						"submit"
 					]
 				}
 			},
