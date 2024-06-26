@@ -10,6 +10,7 @@ class FieldMetadata(BaseModel):
     action: Optional[str] = None
     min: Optional[int] = None
     max: Optional[int] = None
+    allow_other: Optional[bool] = False
 
 
 class Field(BaseModel):

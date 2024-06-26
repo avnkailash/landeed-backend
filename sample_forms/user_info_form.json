@@ -96,7 +96,7 @@
           "type": "select",
           "required": true,
           "placeholder": null,
-          "options": ["Owner", "Agent", "Buyer", "Seller", "Other"],
+          "options": ["Owner", "Agent", "Buyer", "Seller"],
           "metadata": {
             "max_length": null,
             "min_length": null,
@@ -104,6 +104,7 @@
             "styles": {
               "width": "50%"
             },
+            "allow_other": true,
             "action": null,
             "min": null,
             "max": null
