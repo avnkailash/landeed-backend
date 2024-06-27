@@ -31,6 +31,20 @@ def create_new_form(db: Session, form: FormCreate):
     db.refresh(db_form)
     return db_form
 
+def update_form(db: Session, form_id: str, form: FormCreate):
+    db_form = db.query(Form).filter(Form.id == form_id).first()
+    if db_form:
+        db_form.name = form.name
+        db_form.description = form.description
+        db_form.creator = form.creator
+        db_form.version = form.version
+        db_form.page_count = form.page_count
+        db_form.form_timeout = form.form_timeout
+        db_form.pages = [page.model_dump() for page in form.pages]
+        db.commit()
+        db.refresh(db_form)
+        return db_form
+    return None
 
 def activate_deactivate_form(db: Session, form_id: str, status: bool):
     form = db.query(Form).filter(Form.id == form_id).first()

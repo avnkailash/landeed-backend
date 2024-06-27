@@ -15,6 +15,7 @@ from .crud import (
     create_new_form,
     get_submissions_by_form_id,
     activate_deactivate_form,
+    update_form,
     process_submission,
     get_form_by_id,
 )
@@ -41,6 +42,13 @@ def get_form_config(form_id: str, db: Session = Depends(get_db)):
 def create_form(form: FormCreate, db: Session = Depends(get_db)):
     print("Form: ", form)
     return create_new_form(db=db, form=form)
+
+@router.put("/form/{form_id}", response_model=Form)
+def update_form_by_id(form_id: str, form: FormCreate, db: Session = Depends(get_db)):
+    form = update_form(db, form_id, form)
+    if form is None:
+        raise HTTPException(status_code=404, detail="Form not found")
+    return form
 
 
 @router.patch("/forms/{form_id}/toggle", response_model=Form)
